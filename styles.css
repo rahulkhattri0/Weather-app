@@ -227,3 +227,17 @@ h1 {
     border-radius: 100%;
     margin-bottom:1px;
 }
+/* error container css */
+.err-container{
+    display: none;
+}
+.err-container.active{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+.err-container img{
+    width: 200px;
+    height: 200px;
+}
