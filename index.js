@@ -20,7 +20,9 @@ function switchTab(newTab) {
         oldTab.classList.remove("current-tab");
         oldTab = newTab;
         oldTab.classList.add("current-tab");
-
+        if(errContainer.classList.contains("active")){
+            errContainer.classList.remove("active")
+        }
         if(!searchForm.classList.contains("active")) {
             //kya search form wala container is invisible, if yes then make it visible
             userInfoContainer.classList.remove("active");
