@@ -119,15 +119,23 @@ function renderWeatherInfo(weatherInfo) {
 
 function getLocation() {
     if(navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(showPosition,error);
     }
     else {
-        //HW - show an alert for no gelolocation support available
+         //show an alert for no gelolocation support available
+    }
+}
+function error(err) {
+    if(err.code==1){
+        alert("User has denied access to location ,please enable location")
+    }
+    else{
+        console.log("some error in geolocation",err)
     }
 }
 
 function showPosition(position) {
-
+    console.log("position",position)
     const userCoordinates = {
         lat: position.coords.latitude,
         lon: position.coords.longitude,
